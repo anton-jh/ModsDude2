@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsDude2.WPF", "ModsDude2.WPF\ModsDude2.WPF.csproj", "{7777D1C0-D67C-4B9F-97C7-02626B360738}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsDude.WPF", "ModsDude.WPF\ModsDude.WPF.csproj", "{3F5A9354-2C86-4054-A8A1-E9EA33D45D8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7777D1C0-D67C-4B9F-97C7-02626B360738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7777D1C0-D67C-4B9F-97C7-02626B360738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7777D1C0-D67C-4B9F-97C7-02626B360738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7777D1C0-D67C-4B9F-97C7-02626B360738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5A9354-2C86-4054-A8A1-E9EA33D45D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5A9354-2C86-4054-A8A1-E9EA33D45D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5A9354-2C86-4054-A8A1-E9EA33D45D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5A9354-2C86-4054-A8A1-E9EA33D45D8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C09C617A-95E1-400D-90B0-2AA1BA32953A}
+		SolutionGuid = {C135D861-A30D-4253-BE0D-2AD21EA031F2}
 	EndGlobalSection
 EndGlobal
