@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ModsDude.WPF;
+namespace ModsDude.WPF.Views;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
