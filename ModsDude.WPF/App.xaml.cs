@@ -1,4 +1,7 @@
-﻿using ModsDude.WPF.ViewModels;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ModsDude.WPF.StartupHelpers;
+using ModsDude.WPF.ViewModels;
 using ModsDude.WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -9,20 +12,35 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace ModsDude.WPF;
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
 public partial class App : Application
 {
-    protected override void OnStartup(StartupEventArgs e)
-    {
-        base.OnStartup(e);
+    public static IHost? AppHost { get; private set; }
 
-        Window window = new MainWindow()
-        {
-            DataContext = new MainWindowViewModel(),
-            WindowStartupLocation = WindowStartupLocation.CenterScreen
-        };
+
+    public App()
+    {
+        AppHost = Host.CreateDefaultBuilder()
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddSingleton<MainWindow>();
+            })
+            .Build();
+    }
+
+
+    protected override async void OnStartup(StartupEventArgs e)
+    {
+        await AppHost!.StartAsync();
+
+        var window = AppHost.Services.GetRequiredService<MainWindow>();
         window.Show();
+
+        base.OnStartup(e);
+    }
+
+    protected override async void OnExit(ExitEventArgs e)
+    {
+        await AppHost!.StopAsync();
+        base.OnExit(e);
     }
 }
