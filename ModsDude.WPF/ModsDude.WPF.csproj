@@ -17,4 +17,8 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Components\" />
+  </ItemGroup>
+
 </Project>

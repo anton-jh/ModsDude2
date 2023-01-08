@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ModsDude.WPF.ViewModels;
+using ModsDude.WPF.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -12,4 +14,15 @@ namespace ModsDude.WPF;
 /// </summary>
 public partial class App : Application
 {
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        base.OnStartup(e);
+
+        Window window = new MainWindow()
+        {
+            DataContext = new MainWindowViewModel(),
+            WindowStartupLocation = WindowStartupLocation.CenterScreen
+        };
+        window.Show();
+    }
 }
