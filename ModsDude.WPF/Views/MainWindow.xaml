@@ -39,99 +39,98 @@
             </MenuItem>
         </Menu>
 
-        <TabControl ItemsSource="{Binding Tabs}" SelectedItem="{Binding SelectedTab}">
-            <TabControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding DisplayString}"/>
-                </DataTemplate>
-            </TabControl.ItemTemplate>
-            <TabControl.ContentTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
 
-                        <ComboBox Grid.Column="1" Grid.Row="0"
-                                  ItemsSource="{Binding Profiles}"
-                                  SelectedValue="{Binding SelectedProfile}">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Name}"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
+            <ComboBox Grid.Column="0" Grid.Row="0"
+                      ItemsSource="{Binding Games}"
+                      SelectedValue="{Binding SelectedGame}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding DisplayName}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
-                        <StackPanel Grid.Column="0" Grid.Row="1"
-                                    Orientation="Vertical"
-                                    Margin="10">
-                            <GroupBox Header="Remote"
-                                      Margin="0 0 0 20">
-                                <StackPanel Orientation="Vertical">
-                                    <Button>
-                                        Push updates
-                                    </Button>
-                                    <Button>
-                                        Remove unused files
-                                    </Button>
-                                </StackPanel>
-                            </GroupBox>
-                            <GroupBox Header="Local">
-                                <StackPanel Orientation="Vertical">
-                                    <Button>
-                                        Import mods
-                                    </Button>
-                                    <Button>
-                                        Remove unused files
-                                    </Button>
-                                </StackPanel>
-                            </GroupBox>
-                        </StackPanel>
+            <ComboBox Grid.Column="1" Grid.Row="0"
+                      ItemsSource="{Binding SelectedGame.Profiles}"
+                      SelectedValue="{Binding SelectedGame.SelectedProfile}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
-                        <StackPanel Grid.Column="1" Grid.Row="1"
-                                    Orientation="Vertical"
-                                    Margin="10">
-                            <GroupBox Header="Mods">
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock>12 missing mods</TextBlock>
-                                    <Button>
-                                        Activate
-                                    </Button>
-                                    <TextBlock>3 unused mods</TextBlock>
-                                    <Button>
-                                        Move to cache
-                                    </Button>
-                                    <Button Margin="0 40 0 0">
-                                        Edit mod list
-                                    </Button>
-                                </StackPanel>
-                            </GroupBox>
-                        </StackPanel>
+            <StackPanel Grid.Column="0" Grid.Row="1"
+                        Orientation="Vertical"
+                        Margin="10">
+                <GroupBox Header="Remote"
+                          Margin="0 0 0 20">
+                    <StackPanel Orientation="Vertical">
+                        <Button>
+                            Push updates
+                        </Button>
+                        <Button>
+                            Remove unused files
+                        </Button>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Local">
+                    <StackPanel Orientation="Vertical">
+                        <Button>
+                            Import mods
+                        </Button>
+                        <Button>
+                            Remove unused files
+                        </Button>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
 
-                        <StackPanel Grid.Column="2" Grid.Row="1"
-                                    Orientation="Vertical"
-                                    Margin="10">
-                            <GroupBox Header="Savegame">
-                                <StackPanel Orientation="Vertical">
-                                    <Button>
-                                        Check-in
-                                    </Button>
-                                    <Button>
-                                        Check-out
-                                    </Button>
-                                </StackPanel>
-                            </GroupBox>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </TabControl.ContentTemplate>
-        </TabControl>
+            <StackPanel Grid.Column="1" Grid.Row="1"
+                        Orientation="Vertical"
+                        Margin="10">
+                <GroupBox Header="Mods">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>12 missing mods</TextBlock>
+                        <Button>
+                            Activate
+                        </Button>
+                        <TextBlock>3 unused mods</TextBlock>
+                        <Button>
+                            Move to cache
+                        </Button>
+                        <Button Margin="0 40 0 0">
+                            Edit mod list
+                        </Button>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="1"
+                        Orientation="Vertical"
+                        Margin="10">
+                <GroupBox Header="Savegame">
+                    <StackPanel Orientation="Vertical">
+                        <Button>
+                            Check-in
+                        </Button>
+                        <Button>
+                            Check-out
+                        </Button>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
     </DockPanel>
 </Window>

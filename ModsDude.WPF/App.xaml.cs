@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using ModsDude.WPF.StartupHelpers;
 using ModsDude.WPF.ViewModels;
+using ModsDude.WPF.ViewModels.Components;
 using ModsDude.WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ public partial class App : Application
         AppHost = Host.CreateDefaultBuilder()
             .ConfigureServices((hostContext, services) =>
             {
+                services.AddSingleton<MainWindowViewModel>();
                 services.AddSingleton<MainWindow>();
             })
             .Build();

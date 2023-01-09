@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModsDude.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,9 @@ namespace ModsDude.WPF.Views;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public MainWindow()
+    public MainWindow(MainWindowViewModel dataContext)
     {
         InitializeComponent();
+        DataContext = dataContext;
     }
 }

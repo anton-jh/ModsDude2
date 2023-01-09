@@ -1,4 +1,5 @@
-﻿using ModsDude.WPF.ViewModels.Components;
+﻿using ModsDude.WPF.Models;
+using ModsDude.WPF.ViewModels.Components;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,21 +9,36 @@ using System.Threading.Tasks;
 
 namespace ModsDude.WPF.ViewModels
 {
-    class MainWindowViewModel
+    public class MainWindowViewModel
     {
         public MainWindowViewModel()
         {
-            SelectedTab = new("Farming Simulator 22");
-            Tabs = new()
+            Game selectedGame = new("Farming Simulator 22", null, new Profile[]
             {
-                SelectedTab,
-                new("BeamNG.Drive", "BeamMP Client"),
-                new("BeamNG.Drive", "BeamMP Server")
+                new("Elmcreek 5"),
+                new("Calm lands 2022Q1")
+            });
+
+            SelectedGame = new(selectedGame);
+
+            Games = new()
+            {
+                SelectedGame,
+                new(new("BeamNG.Drive", "Client", new Profile[]
+                {
+                    new("Everything"),
+                    new("Old school")
+                })),
+                new(new("BeamNG.Drive", "Server", new Profile[]
+                {
+                    new("Everything"),
+                    new("Old school")
+                }))
             };
         }
 
 
-        public MainTabContentViewModel SelectedTab { get; set; }
-        public ObservableCollection<MainTabContentViewModel> Tabs { get; set; }
+        public ObservableCollection<GameViewModel> Games { get; }
+        public GameViewModel SelectedGame { get; set; }
     }
 }

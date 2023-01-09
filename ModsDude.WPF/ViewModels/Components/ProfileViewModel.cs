@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModsDude.WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace ModsDude.WPF.ViewModels.Components
 {
-    class ProfileViewModel
+    public class ProfileViewModel
     {
-        public ProfileViewModel(string name)
+        public ProfileViewModel(Profile profile)
         {
-            Name = name;
+            Name = profile.Name;
         }
 
-
-        public string Name { get; set; }
+        public string Name { get; }
     }
 }
